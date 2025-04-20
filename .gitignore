@@ -1,0 +1,16 @@
+# ignore files
+rt_framework
+communication
+diagnostics
+security
+memory
+hybrid_deploy
+system_services
+system_services/global_time
+system_services/update_engine
+system_services/state_management
+maintaining
+runtime
+fusa
+config_support
+include
