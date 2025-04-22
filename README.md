@@ -1,7 +1,7 @@
 # vcos_components代码仓库说明
 
 ## 1. 代码仓库简介
-vcos_components为VCOS针对车辆控制域软件需求和规范提供的系统功能组件，以满足智能网联汽车的端到端确定性实时可靠调度、低时延可靠通信和路由、诊断标定、功能安全、可维可测、信息安全等需求
+vcos_components为VCOS针对车辆控制域软件需求和规范提供的系统功能组件，旨在满足智能网联汽车的端到端确定性实时可靠调度、低时延可靠通信和路由、诊断标定、功能安全、可维可测、信息安全等需求
 
 主要提供以下功能栈：
 - 网络通信栈：主要提供CAN、ETH通信、路由和网络管理功能
@@ -22,7 +22,7 @@ components                      # VCOS针对车辆控制域软件需求和规范
 │   ├── CMakeLists.txt          # communication功能栈编译脚本
 │   ├── README.md               # communication功能栈说明文档
 │   ├── external                # 通信功能栈外部依赖
-│   ├── net_dev                 # 栈网络设备驱动模块
+│   ├── net_dev                 # 网络设备驱动模块
 │   └── net_protocols           # 网络协议模块
 ├── configs                     # vcos_components相关配置
 │   ├── README.md               # 配置说明文档
