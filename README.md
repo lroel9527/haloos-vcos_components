@@ -25,6 +25,7 @@ components                      # VCOS针对车辆控制域软件需求和规范
 ├── communication               # 通信功能栈
 │   ├── CMakeLists.txt          # communication功能栈编译脚本
 │   ├── README.md               # communication功能栈说明文档
+│   ├── cdd                     # 复杂驱动模块，支持通信PDU通知到应用层或复杂驱动
 │   ├── external                # 通信功能栈外部依赖
 │   ├── net_dev                 # 网络设备驱动模块
 │   ├── net_manager             # 网络管理模块
@@ -42,6 +43,7 @@ components                      # VCOS针对车辆控制域软件需求和规范
 │   ├── bswm.h                  # 系统组件管理模块接口
 │   ├── comstack_cfg.h          # 通信栈类型配置
 │   ├── comstack_types.h        # 通信栈类型定义
+│   ├── memmap.h                # 内存映射头文件
 │   ├── nvm.h                   # 适配nvm模块的接口 
 │   ├── sysm_init.h             # 系统管理模块接口
 │   ├── tcpip.h                 # 适配tcpip模块的接口
@@ -49,6 +51,7 @@ components                      # VCOS针对车辆控制域软件需求和规范
 ├── maintaining                 # 可维可测栈    
 │   ├── CMakeLists.txt          # 可维可测栈编译脚本
 │   ├── README.md               # 可维可测栈说明文档
+│   ├── det                     # det功能模块
 │   ├── traced                  # trace功能模块
 │   └── vcos_log                # vcos_log功能模块
 ├── memory                      # 存储服务栈
@@ -69,6 +72,10 @@ components                      # VCOS针对车辆控制域软件需求和规范
 │   ├── EcuC                    # EcuC功能模块
 │   ├── README.md               # 运行时环境说明文档
 │   └── Rte                     # Rte功能模块
+├── security                    # 信息安全功能栈
+│   ├── CMakeLists.txt          # 信息安全功能模块编译脚本
+│   ├── crc                     # crc功能模块
+│   └── e2e                     # e2e功能模块
 └── system_services             # 系统服务功能模块
     ├── CMakeLists.txt          # 系统服务功能模块编译脚本
     ├── service_management      # 系统管理功能模块
@@ -87,7 +94,10 @@ components                      # VCOS针对车辆控制域软件需求和规范
 | :---------- | :------------- |
 | **实时调度框架** | [实时调度框架开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/kernel/kernel_user_manual.md) / [实时调度框架配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/os_cfg.md) |
 | **以太通信栈** | [以太通信栈开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/ethernet_user_manual.md) / [EthIf模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/ethif_cfg.md) 、[TcpIp模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/tcpip_cfg.md) |
-| **存储服务栈** | [存储服务栈开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/non_volatile_storage_user_manual.md) / [NvM模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/nvm_cfg.md)、[MemIf模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/memif_cfg.md)、[mempool模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/mempool_cfg.md) |
+| **CAN通信栈** | [CAN通信栈开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/can_communication_user_manual.md)  |
+| **网络管理** | [网络管理开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/net_manager_user_manual.md)  |
+| **存储服务栈** | [存储服务栈开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/non_volatile_storage_user_manual.md)、[内存池开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/mempool_user_manual.md)、[内存映射用户手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/memmap_user_manual.md) / [NvM模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/nvm_cfg.md)、[MemIf模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/memif_cfg.md)、[mempool模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/mempool_cfg.md)、[memmap模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/memmap_cfg.md) |
 | **实时运行环境** | [Rte模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/rte_cfg.md)、[EcuC模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/ecuc_cfg.md) |
+| **功能安全栈** | [轻量级安全隔离功能模块开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/isolate_user_manual.md) / [isolate模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/isolate_cfg.md) |
 | **可维可测** | [实时性分析工具开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/studio/real_time_analysis_tool_user_manual.md) |
-| **系统服务** | [系统管理开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/system_manager_user_manual.md) / [系统组件管理模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/sysm_core_cfg.md)、[系统管理模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/sysm_init_cfg.md) |
+| **系统服务** | [系统管理开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/system_manager_user_manual.md)、[时间同步开发者手册](https://gitee.com/haloos/vcos/blob/master/user_manual/components/time_sync_user_manual.md) / [系统组件管理模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/sysm_core_cfg.md)、[系统管理模块配置项说明](https://gitee.com/haloos/vcos/blob/master/configuration_reference/sysm_init_cfg.md) |
