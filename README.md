@@ -78,8 +78,7 @@ components                      # VCOS针对车辆控制域软件需求和规范
 │   └── e2e                     # e2e功能模块
 └── system_services             # 系统服务功能模块
     ├── CMakeLists.txt          # 系统服务功能模块编译脚本
-    ├── service_management      # 系统管理功能模块
-    └── time                    # 时间服务模块
+    └── service_management      # 系统管理功能模块
 ```
 
 ## 3. 仓库使用入门
